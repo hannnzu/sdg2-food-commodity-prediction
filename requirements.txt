@@ -1,0 +1,16 @@
+# Core data processing & analysis
+numpy
+pandas
+
+# Machine Learning & Deep Learning
+scikit-learn
+xgboost
+tensorflow
+
+# Visualization
+matplotlib
+seaborn
+
+# Notebook environment
+jupyter
+ipykernel
