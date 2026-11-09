@@ -49,6 +49,7 @@ Hasil model diposisikan sebagai **perkiraan**, bukan kepastian, sehingga dapat m
 |---|---|---|
 | PIHPS Nasional (Bank Indonesia) | https://www.bi.go.id/hargapangan | Sumber resmi harga pangan strategis. Pencacahan pada hari kerja, jadi akhir pekan kosong |
 | WFP Indonesia Food Prices (HDX) | https://data.humdata.org/dataset/wfp-food-prices-for-indonesia | CSV, periode 2007 sampai Mei 2024, sumber BPS dan PIHPS. Cek granularitas harian atau bulanan |
+| Kaggle | [https://data.humdata.org/dataset/wfp-food-prices-for-indonesia](https://www.kaggle.com/datasets/muhyusuf1112/indonesia-commodity-price-based-piphs-source) | CSV, harga ritel harian dari 10 komoditas pangan strategis di 34 provinsi di Indonesia , yang diambil dari Pusat Informasi Harga Pangan Strategis (PIHPS) Bank Indonesia - Pusat Informasi Harga Pangan Strategis Nasional resmi. Mencakup periode 1 Januari 2022 hingga 12 Februari 2026 (~1.460 hari), dataset ini menyediakan lebih dari 500.000 titik data untuk ketahanan pangan, analisis inflasi, dan penelitian ekonomi. |
 
 Dataset **tidak diunggah** ke repository (lihat `.gitignore`). Unduh sendiri dan simpan di `data/raw/`.
 
