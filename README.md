@@ -9,7 +9,7 @@ Proyek ML berbasis **SDG 2 (Tanpa Kelaparan)**, **Target 2.c**: memperkirakan ha
 
 | Komponen | Isian |
 |---|---|
-| Nama / NIM | [ Muhammad Raufa Hafid Widodo/244311052 | Raihan Firdaus Alfaritsi/244311055 ] |
+| Nama / NIM | [ Muhammad Raufa Hafid Widodo/244311052 & Raihan Firdaus Alfaritsi/244311055 ] |
 | Program Studi | [ D4 - TRPL ] |
 | Mata Kuliah | [ Data Science ] |
 | Dosen Pengampu | [ Gus Nanang Syaifuddiin ] |
