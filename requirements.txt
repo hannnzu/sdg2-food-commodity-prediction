@@ -1,6 +1,7 @@
 # Core data processing & analysis
 numpy
 pandas
+requests
 
 # Machine Learning & Deep Learning
 scikit-learn

@@ -2,8 +2,8 @@
 
 Proyek ML berbasis **SDG 2 (Tanpa Kelaparan)**, **Target 2.c**: memperkirakan harga eceran harian komoditas pangan strategis (cabai rawit merah, cadangan beras medium) dari data historis, dengan tiga model: baseline, advanced, dan deep learning.
 
-> **Status:** Minggu 1 [L] Learning Problem (menunggu Checkpoint 1).
-> Bagian bertanda `[ ... ]` diisi setelah dataset dicek.
+> **Status:** Minggu 2 [L] Data Understanding & Data Preparation (Selesai).
+> Dataset telah dicek, dibersihkan (anti-leakage), dan dibagi secara kronologis (Train/Val/Test).
 
 ## Informasi Proyek
 
@@ -41,13 +41,14 @@ Hasil model diposisikan sebagai **perkiraan**, bukan kepastian, sehingga dapat m
 |---|---|
 | **Target** | Harga eceran harian cabai rawit merah (Rp/kg) pada hari berikutnya. Regresi / forecasting time series satu langkah ke depan |
 | **Objective** | Meminimalkan MSE. Metrik utama: MAE. Pelengkap: RMSE dan MAPE. Pembanding: prediksi naif (harga kemarin) |
-| **Data** | Time series harian dari PIHPS/WFP: [jumlah baris, rentang tanggal, wilayah]. Data berurutan waktu dan tidak i.i.d. |
+| **Data** | Time series harian dari PIHPS Nasional & Open-Meteo Weather API: 1.504 hari kalender kontinu (1 Januari 2022 s.d. 12 Februari 2026), difokuskan pada 6 provinsi di Pulau Jawa (Banten, DKI Jakarta, Jawa Barat, Jawa Tengah, DI Yogyakarta, Jawa Timur) dengan target harga agregat rata-rata Jawa. Data berurutan waktu dan non-i.i.d. |
 
 ## 4. Dataset
 
 | Sumber | Tautan | Catatan |
 |---|---|---|
 | PIHPS Nasional (Bank Indonesia) | https://www.bi.go.id/hargapangan | Sumber resmi harga pangan strategis. Pencacahan pada hari kerja, jadi akhir pekan kosong |
+| Open-Meteo Weather API | https://open-meteo.com | Data temperatur harian rata-rata (°C) untuk 6 provinsi di Pulau Jawa periode 2022–2026 |
 | WFP Indonesia Food Prices (HDX) | https://data.humdata.org/dataset/wfp-food-prices-for-indonesia | CSV, periode 2007 sampai Mei 2024, sumber BPS dan PIHPS. Cek granularitas harian atau bulanan |
 | Kaggle | [https://data.humdata.org/dataset/wfp-food-prices-for-indonesia](https://www.kaggle.com/datasets/muhyusuf1112/indonesia-commodity-price-based-piphs-source) | CSV, harga ritel harian dari 10 komoditas pangan strategis di 34 provinsi di Indonesia , yang diambil dari Pusat Informasi Harga Pangan Strategis (PIHPS) Bank Indonesia - Pusat Informasi Harga Pangan Strategis Nasional resmi. Mencakup periode 1 Januari 2022 hingga 12 Februari 2026 (~1.460 hari), dataset ini menyediakan lebih dari 500.000 titik data untuk ketahanan pangan, analisis inflasi, dan penelitian ekonomi. |
 
@@ -138,18 +139,28 @@ Library utama yang direncanakan: `numpy`, `pandas`, `scikit-learn`, `matplotlib`
 ## 10. Status Pengerjaan
 
 **Minggu 1 [L]**
-- [ ] Target dan jenis tugas ML jelas
-- [ ] Objective dan metrik utama ditentukan
-- [ ] Dataset dapat diakses dan ukurannya dicek
-- [ ] Minimal 2 referensi terkumpul
-- [ ] Ide berasal dari mahasiswa dan selaras dengan SDG 2 (Target 2.c)
-- [ ] Peran ML dan kontribusi terhadap SDG dijelaskan
-- [ ] Pertimbangan etika dicatat
-- [ ] Repository dibuat dan dosen ditambahkan sebagai collaborator
-- [ ] Ide, SDG, dan dataset disetujui dosen (Checkpoint 1)
+- [x] Target dan jenis tugas ML jelas
+- [x] Objective dan metrik utama ditentukan
+- [x] Dataset dapat diakses dan ukurannya dicek
+- [x] Minimal 2 referensi terkumpul
+- [x] Ide berasal dari mahasiswa dan selaras dengan SDG 2 (Target 2.c)
+- [x] Peran ML dan kontribusi terhadap SDG dijelaskan
+- [x] Pertimbangan etika dicatat
+- [x] Repository dibuat dan dosen ditambahkan sebagai collaborator
+- [x] Ide, SDG, dan dataset disetujui dosen (Checkpoint 1)
+
+**Minggu 2 [L] (Saat Ini)**
+- [x] Informasi dataset (baris, kolom, tipe, ukuran, format) & deskripsi fitur (Bab 4.1–4.2)
+- [x] Analisis kondisi data: missing, duplikat, outlier, noise (Bab 4.3)
+- [x] EDA visualisasi tren, musiman, lonjakan hari raya (Bab 4.4)
+- [x] Data cleaning (imputasi masa lalu / anti-leakage) (Bab 5.1)
+- [x] Feature engineering (lag, rolling, fitur kalender) (Bab 5.2)
+- [x] Transformasi data (scaling fit hanya pada data latih, window LSTM) (Bab 5.3)
+- [x] Splitting kronologis ~70/15/15 tanpa shuffle (Bab 5.4)
+- [x] Data balancing: justifikasi mengapa tidak diterapkan (Bab 5.5)
+- [x] Ringkasan Apa–Mengapa–Bagaimana (Bab 5.6)
 
 **Minggu berikutnya**
-- [ ] Data understanding dan preparation
 - [ ] Baseline dan XGBoost
 - [ ] LSTM (minimal 10 epoch, plot loss)
 - [ ] Evaluasi dan perbandingan model

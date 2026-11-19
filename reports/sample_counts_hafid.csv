@@ -1,0 +1,4 @@
+split,baris_mentah,sampel_tabular,sampel_lstm,tanggal_target_awal,tanggal_target_akhir
+train,1053,1039,1026,2022-01-15,2024-11-18
+val,226,226,226,2024-11-19,2025-07-02
+test (tidak dimuat),-,-,-,-,-
